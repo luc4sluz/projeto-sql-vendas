@@ -1,3 +1,4 @@
+
 -- Criando tabela de farmacias
 CREATE TABLE farmacias (
     id_farmacia INT PRIMARY KEY,
@@ -57,3 +58,9 @@ JOIN farmacias f ON v.id_farmacia = f.id_farmacia
 JOIN medicamentos m ON v.id_medicamento = m.id_medicamento
 GROUP BY f.nome
 ORDER BY faturamento DESC;
+-- Categoria mais vendida
+SELECT m.categoria, SUM(v.quantidade) AS total_vendido
+FROM vendas v
+JOIN medicamentos m ON v.id_medicamento = m.id_medicamento
+GROUP BY m.categoria
+ORDER BY total_vendido DESC;
