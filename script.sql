@@ -42,3 +42,18 @@ INSERT INTO vendas VALUES
 (2, 2, 2, 5, '2026-01-12'),
 (3, 3, 3, 8, '2026-01-15'),
 (4, 1, 2, 3, '2026-01-20');
+
+-- Medicamento mais vendido
+SELECT m.nome, SUM(v.quantidade) AS total_vendido
+FROM vendas v
+JOIN medicamentos m ON v.id_medicamento = m.id_medicamento
+GROUP BY m.nome
+ORDER BY total_vendido DESC;
+
+-- Faturamento por farmácia
+SELECT f.nome, SUM(v.quantidade * m.preco) AS faturamento
+FROM vendas v
+JOIN farmacias f ON v.id_farmacia = f.id_farmacia
+JOIN medicamentos m ON v.id_medicamento = m.id_medicamento
+GROUP BY f.nome
+ORDER BY faturamento DESC;
