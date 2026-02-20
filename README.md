@@ -1,12 +1,15 @@
-# Projeto SQL - Análise de Vendas
+# Projeto SQL - Análise de Vendas de Medicamentos
 
 ## Objetivo
-Praticar consultas SQL analisando dados de vendas fictícios.
+Simular análise de vendas de medicamentos em diferentes farmácias, conectando com o projeto FarmaBot.
 
-## Ferramentas utilizadas
-- SQL
+## Estrutura do banco
+- Farmácias
+- Medicamentos
+- Vendas
 
-## Análises que serão feitas
-- Produto mais vendido
-- Cliente que mais comprou
-- Total de vendas por mês
+## Análises futuras
+- Medicamento mais vendido
+- Faturamento por farmácia
+- Categoria mais vendida
+- Comparação de preços
